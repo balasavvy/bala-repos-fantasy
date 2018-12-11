@@ -1,0 +1,137 @@
+<app-menu (tabEvent)="selectNav($event)"></app-menu>
+<div class="main">
+<section *ngIf="option !== 1 && option !== 5" [ngClass]="{
+   'd-none': option !== (1 && 2 && 3 && 4 && 5),
+   'd-block': option === 0
+  }" class="welcome py-3">
+    <div class="container">
+      <div class="">
+        <div class="col-md-12 d-flex justify-content-start flex-column flex-sm-row f-family-montserrat text-white">
+          <h4 class="mr-4">Squad Selection</h4>
+          <p>You can select maximum 7 player from one team.</p>
+        </div>
+  
+        <div class="col-lg-9 col-12 header__block">
+          <div class="row px-0 f-family-montserrat">
+            <div class="col-md-12 mb-3">
+              <div class="block text-center">Game will start <strong>00h 44m 50 s</strong></div>
+            </div>
+            <div class="col-md-3 col-6 d-flex flex-column justify-content-center">
+              <div class="block text-center">
+                <p class="mb-0">Playerd</p>
+                <p class="mb-0"><strong> 11 / 11</strong></p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="block text-center">
+                <p class="mb-0">Credit Left</p>
+                <p class="mb-0"><strong> 00 </strong></p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="block text-center">
+                <p class="mb-0">Newzealand</p>
+                <p class="mb-0"><strong>06</strong></p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="block text-center">
+                <p class="mb-0">Australia</p>
+                <p class="mb-0"><strong> 05</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row f-family-montserrat d-flex justify-content-between">
+        <div class="block__left mt-5 pr-3 ">
+          <div class="title">Player Selection</div>
+          <div class="table__block bg--white">
+            <div class="player-details ">
+              <div class="row mx-0 text-dark">
+                <div class="search__block d-flex w-100">
+                    <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 flex-grow-1">
+                      <li class="d-flex align-items-center flex-grow-1">
+                        <form class="form-inline my-2 my-lg-0 flex-grow-1">
+                          <input class="form-control pl-3 mr-sm-2 flex-grow-1 font-weight-bold" type="search" placeholder="Search..." aria-label="Search">
+                        </form>
+                      </li>
+                      <li class="d-flex align-items-center btn--search"><i class="fas fa-search"></i></li>
+                    </ul>
+                </div>
+                <div class="d-flex w-100 select-dropdown">
+                  <div class="w-50">
+                      <ngx-select-dropdown [options]="dropdownOptions1" [config]="config1"
+                      [value]="dataModel"></ngx-select-dropdown>
+                  </div>
+                  <div class="w-50">
+                    <ngx-select-dropdown [options]="dropdownOptions2" [config]="config2"
+                    [value]="dataModel"></ngx-select-dropdown>
+                </div>
+              </div>
+              <div class="type d-flex justify-content-between w-100 f-family-montserrat">
+                  <div class="active" (click)="showRole('wc')">WC</div>
+                  <div (click)="showRole('batsman')">Batsman</div>
+                  <div (click)="showRole('ar')">All Rounder</div>
+                  <div (click)="showRole('bowler')">Bowler</div>
+              </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-center">Role</th>
+                      <th scope="col">Player name</th>
+                      <th scope="col" class="text-center">Credits</th>
+                      <th scope="col" class="text-center">Total Point</th>
+                      <th scope="col" class="text-center"></th>
+                    </tr>
+                  </thead>
+                  <tbody class="f-family-montserrat">
+                    <tr [ngClass]="{'active': isActiveId === list.id, 'd-none': list.role !== activeRole}" *ngFor="let list of lists; i as index" (click)=selectRow(list.id)>
+                      <ng-container>
+                        <th scope="row" class="text-center"><img src="{{list.icon}}" height="20"></th>
+                        <td class="player-name"><img class="mr-2 rounded-circle" src="{{list.photo}}" width="30" height="30" /> {{list.name}}</td>
+                        <td class="text-center">{{list.bat}}</td>
+                        <td class="text-center">
+                          {{list.points}}
+                        </td>
+                        <td class="text-center">
+                            <div id="addPlayer" class="icon-plus icons" (click)="addPlayer(id)">+</div>
+                        </td>
+                      </ng-container>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Players -->
+        <app-players #players></app-players>
+  
+      </div>
+  
+    </div>
+  </section>
+
+  <ng-container *ngIf="option === 1">
+    <app-create-team></app-create-team>
+  </ng-container>
+
+  <ng-container *ngIf="option === 2">
+    <app-information></app-information>
+  </ng-container>
+
+  <ng-container *ngIf="option === 3">
+    <app-news></app-news>
+  </ng-container>
+  <ng-container *ngIf="option === 4">
+    <app-discussion></app-discussion>
+  </ng-container>
+  <ng-container *ngIf="option === 5">
+    <app-search></app-search>
+  </ng-container>
+</div>

@@ -1,0 +1,26 @@
+
+.top-block {
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.07);
+    border-radius: 14px;
+}
+.account-user {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+@media (min-width: 768px) {
+    .top-block {
+        margin-top: 110px !important; 
+    }
+}
+
+@media (max-width: 767.98px) {
+    .top-block {
+        margin: 100px 0px 30px;
+    }
+}

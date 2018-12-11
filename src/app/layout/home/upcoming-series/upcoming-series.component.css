@@ -1,0 +1,77 @@
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.items ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 15px;
+  text-align: center;
+  box-shadow: 0px 0px 5.82px 0.18px rgba(0, 0, 0, 0.2); 
+  border-radius: 2px;
+}
+.items ul:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.items ul li:last-child {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .items ul:last-child {
+    margin-bottom: 0rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .upcoming-series {
+    padding-bottom: 2rem;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .items ul {
+    flex-wrap: wrap;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .list-inline-item:first-child {
+    margin-left: 0.5rem;
+  }
+  .items ul:last-child {
+    margin-bottom: 0rem;
+  }  
+  .block:first-child {
+    margin-bottom: 2rem;
+  }
+}
+.progressbar {
+  padding-top: 2.5rem;
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  justify-content: center;
+}
+.progressbar .btn {
+  width: 70px;
+  box-shadow: none;
+  height: 12px;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 0.3rem;
+  border: 2px solid var(--primeColor)
+}
+
+.progressbar .btn--bordered {
+  border: 2px solid #ffd5aa;
+}
+.progressbar .btn--bordered {
+  background-color: #fff;
+  border: 2px solid var(--primeColor)
+}
+

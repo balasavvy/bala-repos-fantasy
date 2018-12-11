@@ -1,0 +1,153 @@
+<div class="row bottom-block" *ngIf="visibleTabs !== true">
+  <div class="col-md-4 py-3 d-flex">
+    <div class="text-center block p-3 w-100 d-flex flex-column justify-content-between" (click)="showTabs(1)" id="v-pills-info-tab" data-toggle="pill" href="#v-pills-info" role="tab" aria-controls="v-pills-info" aria-selected="true">
+      <div>
+        <img src="assets/images/personal-info.png" alt="Personal Information" width="70" height="70">
+        <div class="font-weight-600 mb-4">Personal Information</div>
+      </div>
+      <div>
+        <div>parthbhavsar@gmail.com</div>
+        <div>+91 9876543210</div>
+        <div>Male | 21 June 1991</div>
+      </div>
+      <button class="w-100 btn bg--carrot text-white border-radius-0 mt-4" id="v-pills-info" role="tabpanel" aria-labelledby="v-pills-info-tab">Update</button>
+    </div>
+  </div>
+
+  <div class="col-md-4 py-3 d-flex">
+    <div class="text-center block p-3 w-100 d-flex flex-column justify-content-between" (click)="showTabs(2)">
+      <div>
+          <img src="assets/images/pan-details.png" alt="Pan Details" width="70" height="70">
+          <div class="font-weight-600 mb-4">Pan Details</div>
+      </div>
+      <div>
+        <div>Status: Not Entered</div>
+      </div>
+      <button class="w-100 btn bg--carrot text-white border-radius-0 mt-4">Enter</button>
+    </div>
+  </div>
+
+  <div class="col-md-4 py-3 d-flex">
+    <div class="text-center block p-3 w-100 d-flex flex-column justify-content-between" (click)="showTabs(3)">
+      <div>
+        <img src="assets/images/bank-details.png" alt="Bank Details" width="70" height="70">
+        <div class="font-weight-600 mb-4">Bank Details</div>
+      </div>
+      <div>
+        <div>Status: Not Entered</div>
+      </div>
+      <button class="w-100 btn bg--carrot text-white border-radius-0 mt-4">Enter</button>
+    </div>
+  </div>
+
+  <div class="col-md-4 py-3 d-flex">
+    <div class="text-center block p-3 w-100 d-flex flex-column justify-content-between" (click)="showTabs(4)">
+      <div>
+        <img src="assets/images/deposite.png" alt="Deposite" width="70" height="70">
+        <div class="font-weight-600 mb-4">Deposite</div>
+      </div>
+      <div>
+        <div>Deposite Money</div>
+      </div>
+      <button class="w-100 btn bg--carrot text-white border-radius-0 mt-4">Deposite</button>
+    </div>
+  </div>
+
+  <div class="col-md-4 py-3 d-flex">
+    <div class="text-center block p-3 w-100 d-flex flex-column justify-content-between" (click)="showTabs(5)">
+      <div>
+          <img src="assets/images/deposite.png" alt="Withdraw" width="70" height="70">
+          <div class="font-weight-600 mb-4">Withdraw</div>
+      </div>
+      <div>
+        <div>Withdraw winnings amount to your
+            bank account.</div>
+      </div>
+      <button class="w-100 btn bg--carrot text-white border-radius-0 mt-4" >Withdraw</button>
+    </div>
+  </div>
+
+    <div class="col-md-4 py-3">
+      <div class="text-center block p-3 d-flex flex-column justify-content-between" (click)="showTabs(6)">
+        <div>
+          <img src="assets/images/passbook.png" alt="Passbook" width="70" height="70">
+          <div class="font-weight-600 mb-4">Passbook</div>
+        </div>
+        <div>
+          <div>See all your transactions across TFG, 
+              Deposit & Winnings account</div>
+        </div>
+        <button class="w-100 btn bg--carrot text-white border-radius-0 mt-4">View</button>
+      </div>
+    </div> 
+</div>
+
+<div class="row inner-block" *ngIf="visibleTabs === true">
+  <div class="col-md-4 mb-md-0 mb-4">
+      <button class="btn bg--carrot btn--bar d-md-none mb-3" (click)="showNav()"><i class="fas fa fa-bars"></i></button>
+
+      <div class="nav flex-column nav-pills bg--grey" *ngIf="visible === true" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active" id="v-pills-info-tab" data-toggle="pill" href="#v-pills-info" role="tab" aria-controls="v-pills-info" aria-selected="true" (click)="closeNav()" [ngClass]="{'active show': option === 1 }">
+              <img src="assets/images/prime-personal-info.png" alt="">
+              <div class="ml-4 d-flex flex-column justify-content-center">
+                <div class="title">Personal Information</div>
+                <div class="status">Approved</div>
+              </div>
+          </a>
+          <a class="nav-link" id="v-pills-pan-tab" data-toggle="pill" href="#v-pills-pan" role="tab" aria-controls="v-pills-pan" aria-selected="false" (click)="closeNav()" [ngClass]="{'active show': option === 2 }">
+              <img src="assets/images/prime-pan-details.png" alt="">
+              <div class="ml-4 d-flex flex-column justify-content-center">
+                <div class="title">Pan Details</div>
+                <div class="status">Not Enter</div>
+              </div>
+          </a>
+          <a class="nav-link" id="v-pills-bank-tab" data-toggle="pill" href="#v-pills-bank" role="tab" aria-controls="v-pills-bank" aria-selected="false" (click)="closeNav()" [ngClass]="{'active show': option === 3 }">
+              <img src="assets/images/prime-bank-details.png" alt="">
+              <div class="ml-4 d-flex flex-column justify-content-center">
+                <div class="title">Bank Details</div>
+                <div class="status">Not Enter</div>
+              </div>
+          </a>
+          <a class="nav-link" id="v-pills-deposite-tab" data-toggle="pill" href="#v-pills-deposite" role="tab" aria-controls="v-pills-deposite" aria-selected="false" (click)="closeNav()" [ngClass]="{'active show': option === 4 }">
+            <img src="assets/images/prime-deposite.png" alt="">
+            <div class="ml-4 d-flex flex-column justify-content-center">
+              <div class="title">Deposite</div>
+            </div>
+          </a>
+          <a class="nav-link" id="v-pills-withdraw-tab" data-toggle="pill" href="#v-pills-withdraw" role="tab" aria-controls="v-pills-withdraw" aria-selected="false" (click)="closeNav()" [ngClass]="{'active show': option === 5 }">
+              <img src="assets/images/prime-deposite.png" alt="">
+              <div class="ml-4 d-flex flex-column justify-content-center">
+                <div class="title">Withdraw</div>
+              </div>
+          </a>
+          <a class="nav-link" id="v-pills-passbook-tab" data-toggle="pill" href="#v-pills-passbook" role="tab" aria-controls="v-pills-passbook" aria-selected="false" (click)="closeNav()" [ngClass]="{'active show': option === 6 }">
+              <img src="assets/images/prime-passbook.png" alt="">
+            <div class="ml-4 d-flex flex-column justify-content-center">
+              <div class="title">Passbook</div>
+            </div>
+          </a>
+      </div>      
+  </div>
+  <div class="col-md-8">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade" [ngClass]="{'active show': option === 1 }" id="v-pills-info" role="tabpanel" aria-labelledby="v-pills-info-tab">
+        <app-personal-information></app-personal-information>
+      </div>
+      <div class="tab-pane fade" [ngClass]="{'active show': option === 2 }" id="v-pills-pan" role="tabpanel" aria-labelledby="v-pills-pan-tab">
+        <app-pan-details></app-pan-details>
+      </div>
+      <div class="tab-pane fade" [ngClass]="{'active show': option === 3 }" id="v-pills-bank" role="tabpanel" aria-labelledby="v-pills-bank-tab">
+        <app-bank-details></app-bank-details>
+      </div>
+      <div class="tab-pane fade" [ngClass]="{'active show': option === 4 }" id="v-pills-deposite" role="tabpanel" aria-labelledby="v-pills-deposite-tab">
+        <app-deposite></app-deposite>
+      </div>
+      <div class="tab-pane fade" [ngClass]="{'active show': option === 5 }" id="v-pills-withdraw" role="tabpanel" aria-labelledby="v-pills-withdraw-tab">
+        <app-withdraw></app-withdraw>
+      </div>
+      <div class="tab-pane fade" [ngClass]="{'active show': option === 6 }" id="v-pills-passbook" role="tabpanel" aria-labelledby="v-pills-passbook-tab">
+        <app-passbook></app-passbook>
+      </div>
+    </div>      
+  </div>
+</div>

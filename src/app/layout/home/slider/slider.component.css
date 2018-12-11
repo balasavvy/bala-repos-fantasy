@@ -1,0 +1,252 @@
+
+::ng-deep .form__signup form {
+  max-width: 350px;
+  background-color: #f5f6f7;
+  padding: 20px;
+  margin-left: auto;
+}
+
+.form-control,
+:host ::ng-deep app-sign-up .form-control,
+:host ::ng-deep app-forgot-password .form-control {
+  border-color: transparent;
+}
+::ng-deep.btn--prime {
+  padding: .7rem 1rem;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.27);
+}
+
+::ng-deep ul.social-media {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f93;
+  z-index: 2;
+  
+}
+::ng-deep ul.social-media li {
+  width: 32px;
+  height: 32px;
+  border:2px solid #e8e8e8;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0rem;
+  cursor: pointer;
+  background-color: #fff;
+}
+::ng-deep .form__social-media ul {
+  margin-left: 2rem;
+  margin-bottom: 0;
+}
+::ng-deep .form__social-media li {
+  width: 32px;
+  height: 32px;
+}
+::ng-deep .form__social-media li .fa-google-plus-square {
+  color: #db4639;
+  font-size: 38px;
+}
+
+::ng-deep .form__social-media li .fa-facebook-square {
+  color: #4e6fb5;
+  font-size: 38px;
+}
+
+::ng-deep .form__social-media li .fa-twitter-square {
+  color: #3399ff;
+  font-size: 38px;
+}
+.carousel-caption > .text {
+  margin-top: 20px;
+}
+.carousel-caption h1 {
+  color: #ff6633;
+  font-size: 60px;
+  font-weight: bold;
+}
+.carousel-caption .text p {
+  color:#ff6633;
+  letter-spacing: 3px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.carousel-caption {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1170px;
+  left: 0;
+  right: 0;
+  top: 50px;
+}
+
+.carousel-control-next, .carousel-control-prev {
+  position: absolute;
+  top: 295px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: flex-end;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background-color: #ee6142;
+  opacity: 1;
+}
+
+.carousel-control-prev {
+  left: 15px;
+}
+.carousel-control-next {
+  left: 80px;
+}
+
+.carousel-control-next-icon, 
+.carousel-control-prev-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.img--google-play {
+  margin-top: 65px;
+}
+.img__inner {
+  position: absolute;
+  object-fit: fill;
+  bottom: 0;
+  z-index: -1;
+  height: auto;
+}
+
+.slide-1 {
+  max-width: 370px;
+  right: -5px;
+
+}
+.slide-2 {
+  max-width: 370px;
+  right: 0%;
+}
+.slide-3 {
+  max-width: 370px;
+  right: -15px;
+}
+
+@media (max-width: 1200px)  {
+  .carousel-control-prev {
+    left: 18px;
+  }
+  .carousel-control-next {
+    left: 85px;
+  }
+}
+@media (max-width: 991.98px) and (min-width: 768px) {
+  ::ng-deep ul.social-media {
+    top: 40%;
+    right: 10px;
+  }
+.carousel-caption h1 {
+  font-size: 48px;
+}
+.carousel-control-prev ,
+.carousel-control-next {
+  top: 265px;
+}
+.img--google-play {
+  margin-top: 65px;
+}
+.carousel-caption {
+  top: 50px;
+}
+}
+
+@media (min-width: 768px) {
+  .carousel-item > img {
+    height: 550px;
+    object-fit: fill;
+  }
+  .img__inner {
+    top:-50px;
+  }
+  .img__inner.slide-1 {
+    top:50px;
+  }
+  ::ng-deep .form__signup {
+    margin-top: 60px;
+    max-width: 350px;
+    margin-left: auto;
+  }
+}
+@media (max-width: 767.98px) {
+  .carousel-item > img {
+    height: 400px;
+    object-fit: fill;
+  }
+  .carousel-caption h1 {
+    font-size: 30px;
+  }
+  ::ng-deep .form__signup .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  ::ng-deep ul.social-media {
+    top:130px;
+  }
+
+  .carousel-control-next, 
+  .carousel-control-prev {
+    top:170px;
+  }
+  ::ng-deep .form__signup form {
+    margin-right: auto;
+  }
+  .carousel-caption {
+    top: 0;
+  }
+
+  ::ng-deep .form__signup {
+    max-width: 350px;
+    margin-left: auto;
+    margin-bottom: 40px;
+  }
+}
+
+
+@media (max-width: 1024px) and (min-width: 992px) {
+  ::ng-deep ul.social-media {
+    right: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .img__inner {
+    left: 0;
+  }  
+}
+::ng-deep .form__signup .nav-pills {
+  padding-top: 15px;
+}
+::ng-deep .form__signup .nav-pills .nav-item {
+  min-width: 140px;
+}
+::ng-deep .form__signup .nav-pills .nav-link {
+  border: 2px solid #e6e6e6;
+  background: #e6e6e6;
+  color:#666;
+  font-weight: 600;
+  text-align: center;
+  font-size: 18px;
+}
+::ng-deep .form__signup .nav-pills .nav-link.active {
+  border: 2px solid var(--primeColor);
+  background-color: var(--primeColor);
+  color: #fff;
+  font-weight: 600;
+}

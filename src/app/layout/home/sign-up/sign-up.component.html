@@ -1,0 +1,40 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSignup();" autocomplete="off">
+    <div class="form-group" [ngClass]="{
+            'has-error': signupForm.get('uName').invalid && (signupForm.get('uName').dirty || signupForm.get('uName').touched),
+            'has-feedback': signupForm.get('uName').valid && (signupForm.get('uName').dirty || signupForm.get('uName').touched)
+          }">
+        <input type="text" class="form-control" name="uName" type="text" placeholder="Email / Mobile Number" formControlName="uName" required>
+        <div *ngFor="let validation of validation_messages.uName">
+            <p class="error-message control-label" *ngIf="signupForm.get('uName').hasError(validation.type) &&
+                      (signupForm.get('uName').dirty || signupForm.get('uName').touched)">
+
+                {{ validation.message }}
+            </p>
+        </div>
+    </div>
+    <div class="form-group" [ngClass]="{
+                'has-error': signupForm.get('pwd').invalid && (signupForm.get('pwd').dirty || signupForm.get('pwd').touched),
+                'has-feedback': signupForm.get('pwd').valid && (signupForm.get('pwd').dirty || signupForm.get('pwd').touched)
+              }">
+        <!--<show-hide-password size="" icon="fontawesome" btnStyle="secondary" [btnOutline]="false">
+            <input type="password" name="pwd" class="form-control" placeholder="Password" formControlName="pwd" required>
+        </show-hide-password>-->
+            <input type="password" name="pwd" class="form-control" placeholder="Password" formControlName="pwd" required>
+        <div *ngFor="let validation of validation_messages.pwd">
+            <p class="error-message control-label" *ngIf="signupForm.get('pwd').hasError(validation.type) && (signupForm.get('pwd').dirty || signupForm.get('pwd').touched)">
+                {{ validation.message }}
+            </p>
+        </div>
+
+    </div>
+    <button type="submit" class="btn btn--prime btn-block mt-4">Submit</button>
+    <div class="text-center mt-2">Or</div>
+    <div class="form__social-media d-flex align-items-center my-3">
+        <div>Signup with</div>
+        <ul class="list-unstyled list-inline">
+            <li class="list-inline-item"><i class="fab fa-google-plus-square"></i></li>
+            <li class="list-inline-item"><i class="fab fa-facebook-square"></i></li>
+            <li class="list-inline-item"><i class="fab fa-twitter-square"></i></li>
+        </ul>
+    </div>
+</form>

@@ -1,0 +1,8 @@
+ol {
+    background-color: transparent;
+}
+.btn--square {
+    padding: 5px 44px;
+    border-radius: 0;
+    color: #fff;
+}

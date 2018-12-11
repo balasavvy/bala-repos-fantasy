@@ -1,0 +1,94 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark nav__block-top px-sm-0 py-0">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">TFG</a>
+      <button class="navbar-toggler" type="button" (click)="openNav()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="sidenav sidenav2 navbar-nav ml-auto" id="nav2">
+          <a class="closebtn d-lg-none" (click)="closeNav()">&times;</a>
+        <ul class="navbar-nav ml-lg-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Subscribe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">TFG Store</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Write for tfg</a>
+          </li>
+
+          <li class="nav-item">
+              <div class="dropdown d-flex" (clickOutside)="onClickedOutside($event)">
+                  <button (click)="openMenu($event)" class="btn--user dropbtn px-0 text-capitalize text-white"><img src="../../../assets/images/user.png" width="30" height="30">&nbsp; User&nbsp; <i class="ml-1 fas fa fa-chevron-down"></i></button>
+                  <div id="menuDropdown" class="dropdown-content">
+                    <a (click)="selectOption(option)" *ngFor="let option of options">{{option}}</a>
+                  </div>
+                </div>
+            <a class="text-capitalize text-prime">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark nav__block px-sm-0 py-0">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">IPL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">I-League</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">ISL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">HIL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">PBL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">PKL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">PWL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Wrestling</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">MMA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">UTT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Fantasy Pumdit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Podcast</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">More</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<app-forgot-password></app-forgot-password>

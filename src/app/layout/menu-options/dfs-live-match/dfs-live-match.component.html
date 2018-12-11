@@ -1,0 +1,51 @@
+<ul class="list-inline list-unstyled upcoming-match mb-5 pb-1">
+  <h5 class="text-dark-orange mb-3 f-family-montserrat font-weight-bold">DFS</h5>
+  <li class="list-inline-item d-flex justify-content-between block flex-md-row flex-column" *ngFor="let game of sfs_games">
+    <div class="d-flex justify-content-around flex-grow-2 align-items-center flex-md-nowrap flex-wrap">
+      <div class="d-flex justify-content-center">
+        <img src="{{game.image_team1}}" alt="">
+      </div>
+      <div class="team-vs-text">
+        <h6 class="f-family-montserrat font-weight-bold mb-0">{{game.team1}} <span>VS</span> {{game.team2}}</h6>
+      </div>
+      <div>
+        <img src="{{game.image_team2}}" alt="">
+      </div>
+
+      <div class="price-n-date">
+        <p class="text-center mb-md-0 mb-3">{{game.price}} <br/> {{game.date}}</p>
+      </div>
+      <div class="d-flex justify-content-center ">
+          <button class="btn btn--prime btn--small">Join Now</button>
+        </div>
+    </div>
+     <div class="progressbar">  
+            </div>
+  </li>
+</ul>
+
+<ul class="list-inline list-unstyled upcoming-match">
+  <h5 class="text-dark-orange mb-3 f-family-montserrat font-weight-bold">SFS</h5>
+  <li class="list-inline-item d-flex justify-content-between flex-md-row flex-column block" *ngFor="let game of sfs_games">
+    <div class="d-flex justify-content-around flex-grow-2 align-items-center flex-md-nowrap flex-wrap">
+      <div class="d-flex justify-content-center">
+        <img src="{{game.image_team1}}" alt="">
+      </div>
+      <div class="team-vs-text">
+        <h6 class="f-family-montserrat font-weight-bold mb-0">{{game.team1}} <span>VS</span> {{game.team2}}</h6>
+      </div>
+      <div>
+        <img src="{{game.image_team2}}" alt="">
+      </div>
+
+      <div class="price-n-date">
+        <p class="text-center mb-md-0 mb-3">{{game.price}} <br/> {{game.date}}</p>
+      </div>
+
+      <div class="d-flex justify-content-center ">
+        <a routerLink="/welcome" class="btn btn--prime btn--small">Join Now</a>
+      </div>
+    </div>
+  </li>
+</ul>
+  

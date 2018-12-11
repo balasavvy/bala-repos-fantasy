@@ -1,0 +1,47 @@
+<div class="accordion" id="panDetailTabs">
+    <div class="card">
+      <div class="card-header" id="panTabOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" type="button">
+              Pan Details
+          </button>
+        </h5>
+      </div>
+  
+      <div id="collapsePanTabOne" class="collapse show">
+        <div class="card-body px-0">
+            <form class="float-form" action="">
+              <div class="row">
+                <div class="form-group col-lg-4 col-md-5 ">
+                  <input type="text" id="panCardHolderName" class="form-control" placeholder="Pan card holder name" required>
+                  <label class="form-control-placeholder" for="panCardHolderName">Pan card holder name*</label>
+                </div>
+                <div class="form-group col-lg-4 col-md-5">
+                  <input type="text" id="panCardNo" class="form-control" placeholder="pan card number" required>
+                  <label class="form-control-placeholder" for="panCardNo">pan card number</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="wrap col-md-12">
+                  <div class="text-carrot">Upload a scanned copy of PAN card*</div>
+                    <div class="thumb">
+                        Only *.jpeg, *.png 
+                        and *.pdf formats 
+                        are supported for 
+                        document upload
+                    </div>
+                    <form action="">
+                      <label for="upload">Choose file
+                        <input type='file' id="upload"></label>
+                    </form>
+                  </div>
+              </div>
+
+              <div class="buttons mt-4">
+                <button class="btn bg--carrot border-radius-0 text-white">Save</button>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="d-flex my-3 nav-menu">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{'active': defaultActiveNav === 1}" (click)="selectNav(1)">Create Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{'active': defaultActiveNav === 2}" (click)="selectNav(2)">Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{'active': defaultActiveNav === 3}" (click)="selectNav(3)">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="{'active': defaultActiveNav === 4}" (click)="selectNav(4)">Discussions</a>
+          </li>
+        </ul>
+        <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 flex-grow-1 pr-3">
+            <li>
+                <a class="nav-link" [ngClass]="{'active': defaultActiveNav === 5}" (click)="selectNav(5)">Search</a>
+              </li>
+          <li class="d-flex align-items-center"><i class="fas fa-search"></i></li>
+        </ul>
+    </div>
+  </div>

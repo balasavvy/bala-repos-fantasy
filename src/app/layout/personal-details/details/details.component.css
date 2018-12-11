@@ -1,0 +1,49 @@
+
+.bottom-block .block {
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.07);
+    border-radius: 3px;
+}
+.bottom-block .block img {
+    margin-bottom: 5px;
+}
+
+.inner-block {
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.07);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.nav .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    background-color: #f6f6f6;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #efefef;
+}
+
+
+.nav .title {
+    font-weight: 600;
+    line-height: 20px;
+    color: #0e1833;
+}
+.nav .status {
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+}
+.nav img {
+    width: 50px;
+}
+.btn--bar {
+    padding: .375rem 1rem;
+    display: flex;
+}
+.btn--bar i {
+    font-size: 18px;
+    color: #fff;
+}

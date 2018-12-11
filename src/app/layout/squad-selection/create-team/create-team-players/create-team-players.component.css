@@ -1,0 +1,183 @@
+.btn--rounded {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    padding:0;
+  }
+  .btn-orange {
+    background-color: #ee6142;
+    font-weight: 600;
+    color: #fff;
+  }
+  .blocks {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .players .block {
+    margin: 20px 0px 80px;
+  }
+  
+  .btn--prime {
+      padding: 5px 40px;
+      border-radius: 8px;
+      font-weight: 700;
+      position: absolute;
+      bottom: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .players .block {
+      position: relative;
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+    
+    ::ng-deep .players .icons {
+      background-color: #f93;
+      border-radius: 100%;
+      height: 20px;
+      width:20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: -8px;
+      color: #fff;
+      cursor: pointer;
+    }
+    ::ng-deep .players .icon-close {
+      content: '';
+      left: -5px;
+    }
+    .players .icons.icon-plus {
+      content: '';
+      left: auto;
+      border-radius: 5px;
+      height: 25px;
+      width: 30px;
+      bottom: 20px;
+      top: auto;
+      right: 0;
+    }
+    .players .icon-cap.icons {
+      content: '';
+      right: 0;
+      border-radius: 20px;
+      height: 30px;
+      width: 30px;
+      bottom: 20px;
+      top: 0%;
+    }
+    .players .icon-vcap.icons {
+      content: '';
+      right: 0;
+      border-radius: 20px;
+      height: 30px;
+      width: 30px;
+      top: 40px;
+    }
+    .players .icon-info {
+      content: '';
+      right: -5px;
+    }
+    .block__left {
+      max-width: 450px;
+      width: 100%;
+    }
+    
+    .block__right {
+      width: 100%;
+    }
+    
+    @media (min-width: 1200px) {
+      .blocks {
+        justify-content: space-between;
+      }
+    }
+    @media (min-width: 768px) and (max-width: 1199.98px) {
+      .blocks {
+        justify-content: space-around !important;
+      }
+    }
+    
+    @media (max-width: 991.98px) {
+      .block__left,
+      .block__right { 
+        padding-right: 15px;
+        padding-left: 15px;
+        margin: 0 auto;
+      }
+      .block__right {
+        margin-top: 50px;
+      }
+      .blocks {
+        justify-content: space-around;
+      }
+    }
+    
+    
+    @media (max-width: 500px) {
+      table {
+        min-width: 450px; 
+        overflow: hidden;
+      }
+    }
+      
+    
+    /* Search */
+    .search__block {
+      height: 46px;
+    }
+    .search__block input::-webkit-input-placeholder {
+      color: #000;
+    }
+    
+    .btn--search  {
+      align-self: normal;
+      cursor: pointer;
+      width: 46px;
+      height: 46px;
+      display: flex;  
+      justify-content: center;
+      background-color: var(--primeColor);
+      color: #fff;
+    }
+    .type {
+      border-top: 1px solid #e8e8e8;
+    }
+    .type > div {
+      margin-right: 0; 
+      width: 25%;
+      text-align: center;
+      padding-top: .8rem;
+      padding-bottom: .8rem;
+      color: #000;
+      font-family: var(--montserrat);
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .type > div:hover,
+    .type > div.active {
+      background-color: var(--primeColor) ;
+      color: #fff;
+    }
+    .type > div:not(:last-child) {
+      border-right: 1px solid #e8e8e8;
+    }
+    
+    ::ng-deep .players .icon-close.right-0 {
+      right: -7px !important;
+      left: auto;
+      z-index: 1;
+    }
+/*   
+    .player-status {
+      visibility: hidden;
+    } */
+    .players .btn--prime {
+        max-width: 130px;
+      }

@@ -1,0 +1,9 @@
+.title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+}
+
+.block:not(:last-child) {
+  margin-bottom: 1.5em;
+}

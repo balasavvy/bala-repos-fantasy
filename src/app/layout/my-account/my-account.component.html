@@ -1,0 +1,209 @@
+<div class="container mb-5 f-family-montserrat">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb pl-0 pt-2">
+      <li class="breadcrumb-item"><a class="text-grey" routerLink="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">My Account</li>
+    </ol>
+  </nav>
+
+  <section class="main">
+    <h3 class="mb-4 text-carrot font-weight-600">My Account</h3>
+
+    <div class="row">
+      <div class="col-md-3">
+        <app-sidebar (tabEvent)="selectTab($event)"></app-sidebar>
+      </div>
+      <div class="col-md-9 mt-md-0 mt-5">
+        <div class="title col-md-12 font-weight-600 mb-3">My Contest Cricket - Result </div>
+
+       
+        <div class="block__right">
+          <!-- section 1 -->
+          <ng-container  *ngIf="option === 'My Contests'">
+              <div class="tabs">
+                  <ul class="list-inline list-unstyled d-flex justify-content-between align-items-center">
+                    <li class="list-inline-item" [ngClass]="{active: tab === 'Cricket'}" (click)="selectSubTab('Cricket','Fixtures')">Cricket</li>
+                    <li class="list-inline-item" [ngClass]="{active: tab === 'Football'}" (click)="selectSubTab('Football','Fixtures')">Football</li>
+                  </ul>
+                </div>  
+            <div class="tabs">
+                  <ul class="list-inline list-unstyled d-flex justify-content-between align-items-center">
+                   <ng-container *ngIf=" tab === 'Cricket'">
+                    <li class="list-inline-item" [ngClass]="{active: suboption === 'Fixtures'}" (click)="selectSubTab('Cricket','Fixtures')">Fixtures</li>
+                    <li class="list-inline-item" [ngClass]="{active: suboption === 'Live'}" (click)="selectSubTab('Cricket','Live')">Live</li>
+                    <li class="list-inline-item" [ngClass]="{active: suboption === 'Result'}" (click)="selectSubTab('Cricket','Result')">Result</li>
+                  </ng-container>
+                   <ng-container *ngIf=" tab === 'Football'">
+                    <li class="list-inline-item" [ngClass]="{active: suboption === 'Fixtures'}" (click)="selectSubTab('Football','Fixtures')">Fixtures</li>
+                    <li class="list-inline-item" [ngClass]="{active: suboption === 'Live'}" (click)="selectSubTab('Football','Live')">Live</li>
+                    <li class="list-inline-item" [ngClass]="{active: suboption === 'Result'}" (click)="selectSubTab('Football','Result')">Result</li>
+                  </ng-container>
+                  </ul>
+                </div>
+                <!-- Section Cricket Result -->
+                <ng-container *ngIf="suboption === 'Result' &&  tab === 'Cricket'">
+                    <div class="scrollbar hide" >
+              
+                        <div class="force-overflow">
+                          <div class="items" *ngFor="let cricketResult of cricketResults.cricketResult">
+                            <ul class="list-unstyled list-inline" *ngFor="let list of cricketResult.matchList">
+                              <li class="list-inline-item"><img src="{{list.team1}}" alt="Team 1" width="80" height="75"></li>
+                              <li class="list-inline-item">
+                                <div class="text-carrot font-weight-bold">{{list.type}}</div>
+                                <div class="text-dark font-weight-bold">VS</div>
+                                <div class="text-carrot font-weight-bold">{{list.remainingTime}}</div>
+                              </li>
+                              <li class="list-inline-item"><img src="{{list.team2}}" alt="Team 2" width="80" height="75"></li>
+                              <li class="list-inline-item"><button class="btn btn--carrot btn--small" (click)="selectSubTab('Fixtures')">View Now</button></li>
+                            </ul>
+                          </div> 
+                        </div>
+                      </div> 
+                </ng-container>
+
+                <!-- Section Football Result -->
+                <ng-container *ngIf="suboption === 'Result' &&  tab === 'Football'">
+                    <div class="scrollbar hide" >
+              
+                        <div class="force-overflow">
+                          <div class="items" *ngFor="let footballResult of footballResults.footballResult">
+                            <ul class="list-unstyled list-inline" *ngFor="let list of footballResult.matchList">
+                              <li class="list-inline-item"><img src="{{list.team1}}" alt="Team 1" width="80" height="75"></li>
+                              <li class="list-inline-item">
+                                <div class="text-carrot font-weight-bold">{{list.type}}</div>
+                                <div class="text-dark font-weight-bold">VS</div>
+                                <div class="text-carrot font-weight-bold">{{list.remainingTime}}</div>
+                              </li>
+                              <li class="list-inline-item"><img src="{{list.team2}}" alt="Team 2" width="80" height="75"></li>
+                              <li class="list-inline-item"><button class="btn btn--carrot btn--small" (click)="selectSubTab('Fixtures')">View Now</button></li>
+                            </ul>
+                          </div> 
+                        </div>
+                      </div> 
+                </ng-container>
+         
+                 <!-- Section Cricket Fixture -->
+          <div *ngIf="suboption === 'Fixtures' &&  tab === 'Cricket'">
+              <div class="col-md-12 mb-4 block-1 bg--light-pink d-flex justify-content-between">
+                <div class="text-uppercase">AUS VS NZ</div>
+                <div class="text-success">Completed</div>
+              </div>
+  
+              <div class="col-md-12 block-2 mb-4">
+                <div class=" d-flex justify-content-between py-4 px-3">
+                <div>
+                  <div class="text-uppercase">WINNIGS</div>
+                  <div class="font-weight-600">&#8377; 100,000</div>
+                </div>
+                <div>
+                  <div class="text-uppercase">TEAM</div>
+                  <div class="font-weight-600">&#8377; 5,000</div>
+                </div>
+                <div>
+                  <div class="text-uppercase">entry</div>
+                  <div class="font-weight-600">&#8377; 50</div>
+                </div>
+                <div>
+                  <div class="text-uppercase">WINNERS</div>
+                  <div class="font-weight-600">70%</div>
+                </div>
+                <div>
+                  <div class="text-uppercase">JOINED WITH</div>
+                  <div class="font-weight-600">1 Team</div>
+                </div>
+              </div>
+              </div>
+            
+            <div class="block-3">
+                <div class="accordion" id="accordion">
+                  <div class="card">
+                    <div class="card-header bg--light-pink" id="descOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link w-100 d-flex justify-content-between align-items-center pr-4" type="button" data-toggle="collapse" data-target="#collapseDescOne" aria-expanded="true" aria-controls="collapseDescOne">
+                            <div>
+                              <div class="font-weight-600">Team1</div>
+                              <div>43,000 points</div>
+                            </div>
+                            <div>#180</div>
+                        </button>
+                      </h5>
+                    </div>
+                
+                     <div id="collapseDescOne" class="collapse show" aria-labelledby="descOne" data-parent="#accordion">
+                      <div class="card-body">
+                        dfdg
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+                 <!-- Section Football Fixture -->
+          <div *ngIf="suboption === 'Fixtures' &&  tab === 'Football'">
+              <div class="col-md-12 mb-4 block-1 bg--light-pink d-flex justify-content-between">
+                <div class="text-uppercase">AUS VS NZ</div>
+                <div class="text-success">Completed</div>
+              </div>
+  
+              <div class="col-md-12 block-2 mb-4">
+                <div class=" d-flex justify-content-between py-4 px-3">
+                <div>
+                  <div class="text-uppercase">WINNIGS</div>
+                  <div class="font-weight-600">&#8377; 100,000</div>
+                </div>
+                <div>
+                  <div class="text-uppercase">TEAM</div>
+                  <div class="font-weight-600">&#8377; 5,000</div>
+                </div>
+                <div>
+                  <div class="text-uppercase">entry</div>
+                  <div class="font-weight-600">&#8377; 50</div>
+                </div>
+                <div>
+                  <div class="text-uppercase">WINNERS</div>
+                  <div class="font-weight-600">70%</div>
+                </div>
+                <div>
+                  <div class="text-uppercase">JOINED WITH</div>
+                  <div class="font-weight-600">1 Team</div>
+                </div>
+              </div>
+              </div>
+            
+            <div class="block-3">
+                <div class="accordion" id="accordion">
+                  <div class="card">
+                    <div class="card-header bg--light-pink" id="descOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link w-100 d-flex justify-content-between align-items-center pr-4" type="button" data-toggle="collapse" data-target="#collapseDescOne" aria-expanded="true" aria-controls="collapseDescOne">
+                            <div>
+                              <div class="font-weight-600">Team1</div>
+                              <div>43,000 points</div>
+                            </div>
+                            <div>#180</div>
+                        </button>
+                      </h5>
+                    </div>
+                
+                     <div id="collapseDescOne" class="collapse show" aria-labelledby="descOne" data-parent="#accordion">
+                      <div class="card-body">
+                        dfdg
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+        </ng-container>
+
+         
+
+          <!-- Section 3 -->
+          <div *ngIf="option === 'Personal Details'">
+            <app-my-finances></app-my-finances>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,35 @@
+<section class="upcoming-matches">
+  <div class="heading mb-sm-5 mb-4">Upcoming Series Matches</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 block" *ngFor="let upcomingMatch of upcomingMatches.upcomingMatch">
+        <div class="scrollbar hide">
+          <div class="force-overflow">
+            <div class="items">
+              <ul class="list-unstyled list-inline" *ngFor="let upcomingMatchList of upcomingMatch.matchList">
+              <div class="d-flex justify-content-around w-100 align-items-center">
+                <li class="list-inline-item"><img src="{{upcomingMatchList.team1}}" alt="Team 1" width="80" height="75">
+                  <div class="text-dark font-weight-bold">{{upcomingMatchList.teamName1}}</div>
+                </li>
+              <li class="list-inline-item">
+                <div class="text-prime font-weight-bold">{{upcomingMatchList.type}}</div>
+                <div class="text-dark font-weight-bold">VS</div>
+                <div class="text-prime font-weight-bold">{{upcomingMatchList.remainingTime}}</div>
+              </li>
+              <li class="list-inline-item"><img src="{{upcomingMatchList.team2}}" alt="Team 2" width="80" height="75">
+                <div class="text-dark font-weight-bold">{{upcomingMatchList.teamName2}}</div>
+              </li>
+              <li class="list-inline-item"><button class="btn btn--prime btn--small">Join Now</button></li>
+            </div>
+            <div class="progressbar">  
+            </div>
+            <div>
+            </div>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

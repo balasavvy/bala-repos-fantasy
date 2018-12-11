@@ -1,0 +1,12 @@
+<section class="how-it-works py-5">
+  <div class="heading mb-sm-5 mb-4">How It Works</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6  block text-center" *ngFor="let list of listItems">
+        <img src="{{list.image}}" width="160" height="160">
+        <h3 class="title mt-4 mb-3">{{list.title}}</h3>
+        <p>{{list.content}}</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,86 @@
+<!-- <app-menu></app-menu> -->
+<section class="welcome py-3">
+    <div class="container">
+      <div class="">
+        <div class="col-md-12 d-flex justify-content-start flex-column flex-sm-row f-family-montserrat text-white">
+          <h4 class="mr-4">Squad Selection</h4>
+          <p>You can select maximum 7 player from one team.</p>
+        </div>
+  
+        <div class="col-lg-9 col-12 header__block">
+          <div class="row px-0 f-family-montserrat">
+            <div class="col-md-12 mb-3">
+              <div class="block text-center">Game will start <strong>00h 44m 50 s</strong></div>
+            </div>
+            <div class="col-md-3 col-6 d-flex flex-column justify-content-center">
+              <div class="block text-center">
+                <p class="mb-0">Playerd</p>
+                <p class="mb-0"><strong> 11 / 11</strong></p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="block text-center">
+                <p class="mb-0">Credit Left</p>
+                <p class="mb-0"><strong> 00 </strong></p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="block text-center">
+                <p class="mb-0">Newzealand</p>
+                <p class="mb-0"><strong>06</strong></p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6">
+              <div class="block text-center">
+                <p class="mb-0">Australia</p>
+                <p class="mb-0"><strong> 05</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row f-family-montserrat d-flex justify-content-between">
+        <div class="block__left mt-5 pr-3 ">
+          <div class="title">My Team</div>
+          <div class="table__block bg--white">
+            <div class="player-details ">
+              <div class="row mx-0 text-dark p-3 font-weight-bold">
+                You can create up to 6 teams for a single contest
+              </div>
+              <div class="row mx-0 font-weight-bold p-3 bg--grey">
+                Team 1
+              </div>
+              <div class="row mx-0 d-flex px-3 py-1 font-weight-bold mb-1">
+                <div class="w-50">
+                  <div>Caption</div>
+                  <div class="text-carrot">Aron finach</div>
+                  </div>
+                <div class="w-50">
+                    <div>Vice Caption</div>
+                    <div class="text-carrot">Aron finach</div>
+                </div>
+              </div>
+              <div class="bg--grey pt-2">
+              <div class="row mx-0 d-flex p-3 font-weight-bold bg--carrot text-white justify-content-between">
+                  <div class="cursor-pointer">Edit</div>
+                  <div class="cursor-pointer">Preview</div>
+                  <div class="cursor-pointer">Clone</div>
+                </div>
+              <div class="create-team__inner"></div>
+            </div>
+              <div class="row mx-auto font-weight-bold p-3 justify-content-center cursor-pointer">
+                  Create Team 2
+              </div>
+
+            </div>
+          </div>
+        </div>
+  
+        <!-- Players -->
+        <app-players #players></app-players>
+  
+      </div>
+  
+    </div>
+  </section>

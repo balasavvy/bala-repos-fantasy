@@ -1,0 +1,35 @@
+.nav-menu {
+    background-color: #e8e8e8;
+  
+  }
+  .nav-item:hover,
+  a.nav-link.active {
+    background-color: var(--primeDarkColor);
+    color: #fff;
+  }
+  .nav-item:hover .nav-link,
+  .nav-item.active .nav-link {
+    color: #fff;
+    background-color: var(--primeDarkColor);
+  }
+  .nav-link {
+    min-width: 140px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .nav-item {
+    border-right: 1px solid #fff;
+  }
+  
+  input,
+  input:focus {
+    background-color: transparent;
+    border: none;
+    outline: 0;
+    box-shadow: none;
+  }
+
+ .nav-menu input::-webkit-input-placeholder {
+    color: #666;
+  }
+  

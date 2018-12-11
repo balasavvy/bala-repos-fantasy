@@ -1,0 +1,59 @@
+.btn-link {
+    color: var(--grey);
+    font-size: 16px;
+    width: 100%;
+    text-align: left;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-decoration: none;
+    white-space: inherit;
+    position: relative;
+    padding-right: 1rem;
+    font-weight: 600;
+}
+
+.card {
+    border: none;
+    margin-bottom: 1.5rem;
+}
+.card-header {
+    background-color: #f2f2f2;
+    border-bottom: 0;
+}
+
+.card-body {
+    margin-top: 1rem;
+}
+@media (min-width: 500px) {
+    form .buttons .btn {
+        width: 200px;
+    }
+    .nav-item .nav-link {
+        width: 150px;
+    }
+}
+@media (max-width: 499.98px) {
+    form .buttons .btn {
+        width: 200px;
+    }
+    .buttons {
+        display: flex;
+    }
+    .buttons .btn {
+        width: 50%;
+    }
+    .nav-item .nav-link {
+        width: 95px;
+    }
+}
+
+.nav-item .nav-link {
+    border-bottom: 2px solid transparent;
+    color: #666666;
+    text-align: center;
+}
+.nav-item:hover .nav-link,
+.nav-item .nav-link.active {
+    color: var(--carrot);
+    border-bottom: 2px solid var(--carrot);
+}

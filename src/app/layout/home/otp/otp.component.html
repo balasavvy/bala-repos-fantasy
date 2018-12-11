@@ -1,0 +1,14 @@
+<form class="mx-auto"  [formGroup]="otpForm" (ngSubmit)="submitOtp()"> 
+    <div class="form-group"  [ngClass]="{
+      'has-error': otpForm.get('otppwd').invalid && (otpForm.get('otppwd').dirty || otpForm.get('otppwd').touched),
+      'has-feedback': otpForm.get('otppwd').valid && (otpForm.get('otppwd').dirty || otpForm.get('otppwd').touched)
+    }">
+      <input type="password" formControlName="otppwd" class="form-control" placeholder="Enter OTP" required>
+      <div *ngFor="let validation of validation_messages.otppwd">
+          <p class="error-message control-label" *ngIf="otpForm.get('otppwd').hasError(validation.type) && (otpForm.get('otppwd').dirty || otpForm.get('otppwd').touched)">
+              {{ validation.message }}
+          </p>
+      </div>
+    </div>
+    <button type="submit" [disabled]="!otpForm.valid" data-dismiss="modal" class="btn btn--prime btn-block mt-4">Submit</button>
+</form>

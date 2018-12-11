@@ -1,0 +1,89 @@
+<section class="welcome py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-start flex-column flex-sm-row f-family-montserrat text-white">
+        <h4 class="mr-4">Squad Selection</h4>
+        <p>You can select maximum 7 player from one team.</p>
+      </div>
+
+      <div class="col-lg-9 col-12 header__block">
+        <div class="row px-0 f-family-montserrat">
+          <div class="col-md-12 mb-3">
+            <div class="block text-center">Game will start <strong>00h 44m 50 s</strong></div>
+          </div>
+          <div class="col-md-3 col-6 d-flex flex-column justify-content-center">
+            <div class="block text-center">
+              <p class="mb-0">Playerd</p>
+              <p class="mb-0"><strong> 11 / 11</strong></p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="block text-center">
+              <p class="mb-0">Credit Left</p>
+              <p class="mb-0"><strong> 00 </strong></p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="block text-center">
+              <p class="mb-0">Newzealand</p>
+              <p class="mb-0"><strong>06</strong></p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="block text-center">
+              <p class="mb-0">Australia</p>
+              <p class="mb-0"><strong> 05</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row f-family-montserrat d-flex justify-content-between">
+      <div class="block__left mt-5 pr-3 ">
+        <div class="title">Player Selection</div>
+        <div class="table__block bg--white">
+          <div class="player-details ">
+            <div class="row mx-0 text-dark">
+              <h5 class="text__block col-md-12 text-center py-4">Choose Captain(C) & Vice Captain(VC)</h5>
+              <div class="col-md-12 d-flex justify-content-between py-4">
+                  <div class="text__block font-weight-bold">C - gets 2x Points</div>
+                  <div class="text__block font-weight-bold text-right">VC - gets 1.5x Points</div>
+              </div>
+              
+            </div>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-center">info</th>
+                    <th scope="col">Player name</th>
+                    <th scope="col"></th>
+                    <th scope="col">Total Point</th>
+                  </tr>
+                </thead>
+                <tbody class="f-family-montserrat">
+                  <tr [ngClass]="{'active': isActiveId === list.id}" *ngFor="let list of lists; i as index" (click)=selectRow(list.id)>
+                    <th scope="row" class="text-center">{{list.id}}</th>
+                    <td><img class="mr-2 rounded-circle" src="{{list.photo}}" width="30" height="30" /> {{list.name}}</td>
+                    <td>{{list.bat}}</td>
+                    <td>
+                      <div class="d-flex justify-content-start">
+                        <button class="btn btn--rounded btn-orange mr-2" *ngFor="let icon of list.icons">{{icon}}</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Players -->
+      <app-players></app-players>
+
+    </div>
+
+  </div>
+</section>

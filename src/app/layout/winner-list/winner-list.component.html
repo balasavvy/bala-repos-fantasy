@@ -1,0 +1,67 @@
+<app-menu></app-menu>
+  <section class="welcome py-3">
+      <div class="container">
+        <div class="">
+          <div class="col-md-12 d-flex justify-content-start flex-column flex-sm-row f-family-montserrat text-white">
+            <h4 class="mr-4 text-uppercase">Winner List</h4>
+          </div>
+    
+          <div class="col-lg-9 col-12 header__block">
+            <div class="row px-0 f-family-montserrat">
+              <div class="col-md-3 col-6">
+                <div class="block text-center">
+                  <p class="mb-0">Newzealand</p>
+                  <p class="mb-0"><strong>06</strong></p>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="block text-center">
+                  <p class="mb-0">Australia</p>
+                  <p class="mb-0"><strong> 05</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="row f-family-montserrat d-flex justify-content-between">
+          <div class="block__left mt-5 pr-3">
+            <div class="title text-uppercase px-3">Winner</div>
+            <div class="table__block bg--white">
+              <div class="player-details">
+                <div class="row mx-0 px-3 font-weight-bold py-3">
+                  Head to Head
+                </div>
+                <div class="row mx-0 d-flex p-3 font-weight-bold bg--grey">
+                  <div class="w-50">Winners: 1</div>
+                  <div class="w-50 text-right">Fees: 350</div>
+                </div>
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead class="bg--carrot text-white">
+                      <tr>
+                        <th scope="col" class="text-center">Team</th>
+                        <th></th>
+                        <th scope="col" class="text-center">Rank</th>
+                      </tr>
+                    </thead>
+                    <tbody class="f-family-montserrat">
+                      <tr [ngClass]="{'active-text': isActiveId === list.team}" *ngFor="let list of list; i as index" (click)=selectRow(list.team)>
+                        <td scope="row" class="text-center">{{list.team}}</td>
+                        <td class="text-center"><img src="{{list.trophy}}" alt="">&nbsp;&nbsp; {{list.desc}}</td>
+                        <td class="text-center">{{list.rank}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Players -->
+          <app-players></app-players>
+    
+        </div>
+    
+      </div>
+    </section>

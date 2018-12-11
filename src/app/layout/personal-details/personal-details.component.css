@@ -1,0 +1,9 @@
+.outer-container {
+    background-image: url("../../../assets/images/ground.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 230px;
+}
+ol {
+    background-color: transparent;
+}
+

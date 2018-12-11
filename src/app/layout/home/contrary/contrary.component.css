@@ -1,0 +1,94 @@
+.contrary .form {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+.contrary__bg {
+  background-image: url("../../../../assets/images/extra.png");
+  background-size: cover;
+  height: 790px;
+}
+
+h2 {
+  width: 100%;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 250px;
+  line-height: 2.7rem;
+}
+.input-group {
+  background-color: #f6f6f6;
+  border:0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.input-group-btn > .btn {
+  border-left-width:0;
+  left:-2px;
+  background-color: transparent;
+  height: 40px;
+}
+.input-group .form-control:focus {
+ box-shadow:none;
+ -webkit-box-shadow:none; 
+ border-color:#cccccc; 
+}
+input.form-control {
+  background-color: #f6f6f6;
+  border: 0;
+}
+.input-group input.form-control::-webkit-input-placeholder {
+  color: #000;
+}
+.input-group input.form-control:-ms-input-placeholder {
+  color: #000;
+}
+.input-group input.form-control:-moz-placeholder {
+  color: #000;
+}
+.input-group input.form-control::-moz-placeholder {
+  color: #000;
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .contrary__bg {
+    height: 580px;
+  }
+  h2 {
+    padding-top: 120px;
+  }
+}
+  @media (min-width: 768px) and (max-width: 991.98px) {
+  .contrary__bg {
+    height: 490px;
+  }
+  .form .text-dark {
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    padding-top: 120px;
+  }
+}
+
+@media (min-width: 768px) {
+  .input-group {
+    width: 400px;
+  }
+}
+@media (max-width: 767.98px) {
+  .input-group {
+    width: 300px;
+  }
+  .form .text-dark {
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    line-height: 2rem;
+    font-size: 20px;
+    padding-top: 120px;
+  }
+  .contrary__bg {
+    height: 320px;
+  }
+}

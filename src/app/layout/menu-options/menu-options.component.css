@@ -1,0 +1,128 @@
+
+.menu-options h4 {
+    position: relative;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--grey3);
+  }
+  
+  h4:before {
+    visibility: visible !important;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #333;
+  }
+  
+  .menu-options__block {
+    font-size: 16px;
+  }
+  .menu-options__block:first-child {
+    margin-bottom: 2rem;
+  }
+  
+  
+  li {
+    /* border: 1px solid #ccc; */
+    cursor: pointer;
+  }
+  .list-inline-item {
+    margin-right: 0;
+    height: 90px;
+  }
+  
+  .dropbtn {
+    background-color: #fff;
+    color: #ee6142;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-family: var(--montserrat);
+    text-decoration: underline;
+    font-weight: 700;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    color: #ee6142;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ee6142;
+    color: #fff;
+    min-width: 140px;
+    overflow: auto;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .dropdown-content a:hover {
+    text-decoration: underline;
+   }
+  
+  .show {display: block;}
+  .nav-tab{
+    color: #fff;
+    background: var(--carrot);
+    padding: 0 15px 0;
+  }
+  .nav-subtab{
+    color: #333;
+    background: #eee;
+    padding: 0 15px 0;
+  }
+  .nav-link {
+    padding: 0;
+    margin-right: 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 5px 25px;
+  }
+  .nav-subtab .nav-link{
+    text-transform: none;
+    font-weight: lighter;
+  }
+  a.nav-link:not([href]):not([tabindex]):hover,
+  a.nav-link.active {
+    color: #fff !important;
+    background: #000;
+  }
+  a.nav-link.active:hover,  a.nav-link:hover{
+    background: #000;
+  }
+  .nav-subtab a.nav-link.active{
+    background: var(--carrot);
+  }
+  
+
+  .ad-image {
+    object-fit: cover;
+    width: 100%;
+    max-height: 250px;
+    margin-bottom: 2rem;
+  }
+
+  .menu-options input {
+    padding: 3px 10px;
+    height: 40px;
+  }
+  

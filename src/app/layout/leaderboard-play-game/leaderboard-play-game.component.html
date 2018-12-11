@@ -1,0 +1,79 @@
+  <section class="welcome py-3">
+      <div class="container">
+        <div class="">
+          <div class="col-md-12 d-flex justify-content-start flex-column flex-sm-row f-family-montserrat text-white">
+            <h4 class="mr-4 text-uppercase">Cash Contest</h4>
+          </div>
+    
+          <div class="col-lg-9 col-12 header__block">
+            <div class="row px-0 f-family-montserrat">
+              <div class="col-md-3 col-6">
+                <div class="block text-center">
+                  <p class="mb-0">Live Score</p>
+                  <p class="mb-0"><strong>190-5</strong></p>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="block text-center">
+                  <p class="mb-0">Australia</p>
+                  <p class="mb-0"><strong> 05</strong></p>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="block text-center">
+                  <p class="mb-0">Newzealand</p>
+                  <p class="mb-0"><strong> 05</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="row f-family-montserrat d-flex justify-content-between">
+          <div class="block__left mt-5 pr-3">
+            <div class="title text-uppercase px-3">Cash Contest</div>
+            <div class="table__block bg--white">
+              <div class="player-details">
+                <div class="row mx-0 px-3 font-weight-bold py-3">
+                    <div class="w-50">Head to Head</div>
+                    <div class="w-50 text-right">Winning Amount: 1,50,000</div> 
+                </div>
+                <div class="row mx-0 d-flex p-3 font-weight-bold bg--grey">
+                  <div class="w-50">Winners: 100</div>
+                  <div class="w-50 text-right">Fees: 350</div>
+                </div>
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead class="bg--carrot text-white">
+                      <tr>
+                        <th scope="col" class="pl-4">Team</th>
+                        <th scope="col" class="text-center">Points</th>
+                        <th scope="col" class="text-right pr-4">Rank</th>
+                      </tr>
+                    </thead>
+                    <tbody class="f-family-montserrat">
+                      <tr [ngClass]="{'active': isActiveId === list.team}" *ngFor="let list of list; i as index" (click)=selectRow(list.team)>
+                        <td scope="row" class="pl-4">
+                          <div><strong>{{list.name}}</strong></div>
+                          <div>{{list.team}}</div>
+                        </td>
+                        <td class="text-center position-relative"  [ngClass]="{'caret-icon': isActiveId === list.team}">
+                          {{list.point}} &nbsp;
+                      </td>
+                        <td class="text-right pr-4">{{list.rank}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Players -->
+          <app-players #players></app-players>
+    
+        </div>
+    
+        <app-leaderboard-game-play-list></app-leaderboard-game-play-list>
+      </div>
+    </section>

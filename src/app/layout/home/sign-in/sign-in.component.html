@@ -1,0 +1,44 @@
+<form [formGroup]="signinform" (ngSubmit)=onSubmit()>
+    <div class="form-group" [ngClass]="{
+      'has-error': signinform.get('uName').invalid && (signinform.get('uName').dirty || signinform.get('uName').touched),
+      'has-feedback': signinform.get('uName').valid && (signinform.get('uName').dirty || signinform.get('uName').touched)
+    }">
+        <input class="form-control" placeholder="Email / Mobile Number" formControlName="uName" required>
+        <div *ngFor="let validation of validation_messages.uName">
+            <p class="error-message control-label" *ngIf="signinform.get('uName').hasError(validation.type) &&
+            (signinform.get('uName').dirty || signinform.get('uName').touched)">
+
+                {{ validation.message }}
+            </p>
+        </div>
+    </div>
+    <div class="form-group" [ngClass]="{
+      'has-error': signinform.get('pwd').invalid && (signinform.get('pwd').dirty || signinform.get('pwd').touched),
+      'has-feedback': signinform.get('pwd').valid && (signinform.get('pwd').dirty || signinform.get('pwd').touched)
+    }">
+        <!-- <show-hide-password size="" icon="fontawesome" btnStyle="secondary" [btnOutline]="false">
+            <input type="password" name="pwd" class="form-control" placeholder="Password" formControlName="pwd" required>
+        </show-hide-password> -->
+        <input type="password" name="pwd" class="form-control" placeholder="Password" formControlName="pwd" required>
+        <div *ngFor="let validation of validation_messages.pwd">
+            <p class="error-message control-label" *ngIf="signinform.get('pwd').hasError(validation.type) && (signinform.get('pwd').dirty || signinform.get('pwd').touched)">
+                {{ validation.message }}
+            </p>
+        </div>
+    </div>
+    <div class="form-group form-check d-flex justify-content-end">
+        <a class="text-prime cursor-pointer hover-decor" data-toggle="modal" data-target="#forgotPasswordForm">Forgot Password?</a>
+    </div>
+    <button type="submit" class="btn btn--prime btn-block">Submit</button>
+    <div class="text-center mt-2">Or</div>
+    <div class="form__social-media d-flex align-items-center my-3">
+        <div>Login with</div>
+        <ul class="list-unstyled list-inline">
+            <li class="list-inline-item"><i class="fab fa-google-plus-square"></i></li>
+            <li class="list-inline-item"><i class="fab fa-facebook-square"></i></li>
+            <li class="list-inline-item"><i class="fab fa-twitter-square"></i></li>
+        </ul>
+    </div>
+    <div class="text-center">Don't have an account? <a class="text-blue cursor-pointer hover-decor" (click)="activeSignup()">Sign up now</a></div>
+</form>
+

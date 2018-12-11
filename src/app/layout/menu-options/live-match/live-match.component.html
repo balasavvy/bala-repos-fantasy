@@ -1,0 +1,37 @@
+<ul class="list-inline list-unstyled upcoming-match mb-5 pb-1">
+    <h5 class="text-dark-orange mb-3 f-family-montserrat font-weight-bold">DFS</h5>
+    <li class="list-inline-item d-flex justify-content-between block flex-md-row flex-column "  *ngFor="let series of upcomingSeries.series">
+        <div *ngFor="let series of upcomingSeries.series">
+            <div class="block d-flex flex-wrap justify-content-between">
+              <div class=" col-sm-6 col-12 mb-3 px-0 block__inner" *ngFor="let seriesList of series.seriesList; let even = even; let odd = odd">
+                    <img class="img-fluid" src="{{seriesList.image}}" alt="Match Series">
+                    <div class="content position-absolute d-flex justify-content-center">
+                      <p>{{seriesList.content}}</p></div>
+                    <button class="btn btn--prime btn--small text-uppercase position-absolute">Join Now</button>
+                      <!-- <div class="progress position-absolute">
+                        <div class="progress-bar progress-bar-striped bg--prime" role="progressbar" [ngStyle]="{'width.%': seriesList.progress}" aria-valuemin="0" aria-valuemax="100">{{seriesList.progress}}%</div>
+                      </div> -->
+              </div>
+            </div>
+          </div>
+    </li>
+  </ul>
+
+  <ul class="list-inline list-unstyled upcoming-match mb-5 pb-1">
+      <h5 class="text-dark-orange mb-3 f-family-montserrat font-weight-bold">SFS</h5>
+      <li class="list-inline-item d-flex justify-content-between block flex-md-row flex-column "  *ngFor="let series of upcomingSeries.series">
+          <div *ngFor="let series of upcomingSeries.series">
+              <div class="block d-flex flex-wrap justify-content-between">
+                <div class=" col-sm-6 col-12 mb-3 px-0 block__inner" *ngFor="let seriesList of series.seriesList; let even = even; let odd = odd">
+                      <img class="img-fluid" src="{{seriesList.image}}" alt="Match Series">
+                      <div class="content position-absolute d-flex justify-content-center">
+                        <p>{{seriesList.content}}</p></div>
+                      <button class="btn btn--prime btn--small text-uppercase position-absolute">Join Now</button>
+                        <div class="progress position-absolute">
+                          <div class="progress-bar progress-bar-striped bg--prime" role="progressbar" [ngStyle]="{'width.%': seriesList.progress}" aria-valuemin="0" aria-valuemax="100">{{seriesList.progress}}%</div>
+                        </div>
+                </div>
+              </div>
+            </div>
+      </li>
+    </ul>

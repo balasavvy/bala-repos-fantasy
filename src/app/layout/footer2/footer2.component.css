@@ -1,0 +1,26 @@
+footer.footer {
+  background-color: var(--grey3);
+}
+.footer h3 {
+  color: #fff;
+  font-size: 24px;
+ font-family: var(--montserrat);
+ margin-bottom: 1.5rem;
+}
+.footer a {
+  color: #bababa;
+  font-family: var(--montserrat);
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: .5rem;
+  display: block;
+  cursor: pointer;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border-color: #484848;
+}

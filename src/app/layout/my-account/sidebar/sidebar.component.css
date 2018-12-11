@@ -1,0 +1,97 @@
+.accordion,
+.collapse,
+.collapsing {
+    background-color: #f2f2f2;
+}
+.accordion {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.btn-link:not(.collapsed) {
+    color: var(--carrot);
+}
+.btn-link.collapsed {
+    color: var(--grey);
+}
+.btn-link {
+    font-size: 15px;
+    width: 100%;
+    text-align: left;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-decoration: none;
+    white-space: inherit;
+    position: relative;
+    padding-right: 1rem;
+    padding: 0 1rem 0 0;
+}
+
+.card {
+    border: none;
+    margin-bottom: 0rem;
+}
+.card-header {
+    background-color: #f2f2f2;
+    border-bottom: 0;
+    padding: .3rem 1.25rem;
+}
+.btn-link:after {
+    font-family: 'Font Awesome\ 5 Free';
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: inherit;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+
+.btn-link:after {
+    color: var(--carrot);
+}
+.card .btn-link:not(.collapsed):after  {
+    content: '\f054';
+}
+/* .card.first .btn-link:not(.collapsed):after {
+    content: '\f078' ;
+}     */
+
+.btn-link.collapsed:after {
+    content: '\f054';
+    color: var(--grey);
+    opacity: .8;
+}
+
+.card-body {
+    padding-top: 0;
+    padding-left: 2rem;
+    padding-bottom: 0;
+}
+li {
+    position: relative;
+    cursor: pointer;
+}
+li:after {
+    font-family: 'Font Awesome\ 5 Free';
+    font-style: normal;
+    font-weight: 600;
+    text-decoration: inherit;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+li.active:after {
+    content: '\f054';
+    color: var(--carrot);
+}
+li:not(.active):after {
+    content: '\f054';
+    color: var(--grey);
+    opacity: .8;
+}
+li.active {
+    color: var(--carrot);
+}
