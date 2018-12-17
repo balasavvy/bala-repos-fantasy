@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Daterangepicker } from 'ng2-daterangepicker';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import { LayoutComponent } from './layout.component';
 import { HeaderComponent } from './header/header.component';
@@ -75,6 +78,11 @@ import { InformationComponent } from './information/information.component';
 import { NewsComponent } from './news/news.component';
 import { DiscussionComponent } from './discussion/discussion.component';
 import { SearchComponent } from './search/search.component';
+import { HttpModule } from '@angular/http';
+import { searchInList } from '../pipe/searchtext.pipe';
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
 @NgModule({
   declarations: [
     LayoutComponent,
@@ -85,7 +93,8 @@ import { SearchComponent } from './search/search.component';
      SquadSelectionComponent, WinnerListComponent, FieldErrorDisplayComponent, PlayerInfoComponent, 
      CreateTeamComponent, MenuComponent, PlayersComponent, FaqComponent, PrivacyPolicyComponent, 
      LeaderBoardComponent, BreadcrumbComponent, RankingComponent, ContactComponent, PartnerComponent, 
-     MyAccountComponent, SidebarComponent, PersonalDetailsComponent, MyFinancesComponent, PersonalInformationComponent, BankDetailsComponent, PanDetailsComponent, DepositeComponent, WithdrawComponent, PassbookComponent, DetailsComponent, TopbarComponent, SidenavComponent, SignUpComponent,SignInComponent, ForgotPasswordComponent, DfsLiveMatchComponent, DfsUpcomingMatchComponent,SfsUpcomingMatchComponent, LeaderboardPlayGameComponent, LeaderboardGamePlayListComponent, SfsComponent, DfsComponent, OtpComponent, AboutComponent, LegalComponent, HowToPlayTextComponent, CreateTeamPlayersComponent, InformationComponent, NewsComponent, DiscussionComponent, SearchComponent
+     MyAccountComponent, SidebarComponent, PersonalDetailsComponent, MyFinancesComponent, PersonalInformationComponent, BankDetailsComponent, PanDetailsComponent, DepositeComponent, WithdrawComponent, PassbookComponent, DetailsComponent, TopbarComponent, SidenavComponent, SignUpComponent,SignInComponent, ForgotPasswordComponent, DfsLiveMatchComponent, DfsUpcomingMatchComponent,SfsUpcomingMatchComponent, LeaderboardPlayGameComponent, LeaderboardGamePlayListComponent, SfsComponent, DfsComponent, OtpComponent, AboutComponent, LegalComponent, HowToPlayTextComponent, CreateTeamPlayersComponent, InformationComponent, NewsComponent, DiscussionComponent, SearchComponent,
+     searchInList
   ],
   exports: [
     LayoutComponent
@@ -93,15 +102,23 @@ import { SearchComponent } from './search/search.component';
   imports: [
     CommonModule,
     BrowserModule,
-      FormsModule,
-      ReactiveFormsModule,
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
     LayoutRoutingModule,
     ClickOutsideModule,
     SelectDropDownModule,
-    Daterangepicker
+    Daterangepicker,
+    PerfectScrollbarModule
    ],
    entryComponents: [
     FieldErrorDisplayComponent
   ],
+  providers: [
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
+  ]
 })
 export class LayoutModule { }

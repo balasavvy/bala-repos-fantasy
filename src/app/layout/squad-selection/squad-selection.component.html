@@ -30,7 +30,7 @@
             </div>
             <div class="col-md-3 col-6">
               <div class="block text-center">
-                <p class="mb-0">Newzealand</p>
+                <p class="mb-0">Australia</p>
                 <p class="mb-0"><strong>06</strong></p>
               </div>
             </div>
@@ -54,7 +54,7 @@
                     <ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 flex-grow-1">
                       <li class="d-flex align-items-center flex-grow-1">
                         <form class="form-inline my-2 my-lg-0 flex-grow-1">
-                          <input class="form-control pl-3 mr-sm-2 flex-grow-1 font-weight-bold" type="search" placeholder="Search..." aria-label="Search">
+                          <input [(ngModel)] = "searchPlayers" name="search_pl" class="form-control pl-3 mr-sm-2 flex-grow-1 font-weight-bold" type="search" placeholder="Search..." aria-label="Search">
                         </form>
                       </li>
                       <li class="d-flex align-items-center btn--search"><i class="fas fa-search"></i></li>
@@ -62,49 +62,72 @@
                 </div>
                 <div class="d-flex w-100 select-dropdown">
                   <div class="w-50">
-                      <ngx-select-dropdown [options]="dropdownOptions1" [config]="config1"
-                      [value]="dataModel"></ngx-select-dropdown>
+                      <ngx-select-dropdown #teamselection (change)="selectTeamFn($event)" [options]="teams" [config]="config1"
+                      [(value)]="selectedTeam"></ngx-select-dropdown>
                   </div>
                   <div class="w-50">
-                    <ngx-select-dropdown [options]="dropdownOptions2" [config]="config2"
-                    [value]="dataModel"></ngx-select-dropdown>
+                    <ngx-select-dropdown (change)="sortingChangeFn($event)" [options]="sortOptionArray"  [config]="config2" [(value)]="sortOption"></ngx-select-dropdown>
                 </div>
               </div>
               <div class="type d-flex justify-content-between w-100 f-family-montserrat">
-                  <div class="active" (click)="showRole('wc')">WC</div>
-                  <div (click)="showRole('batsman')">Batsman</div>
-                  <div (click)="showRole('ar')">All Rounder</div>
-                  <div (click)="showRole('bowler')">Bowler</div>
+                  <div [ngClass]="{'active': activeRole === 'all'}" (click)="showRole('all')">ALL</div>
+                  <div [ngClass]="{'active': activeRole === 'wk'}" (click)="showRole('wk')">WK</div>
+                  <div [ngClass]="{'active': activeRole === 'batsman'}" (click)="showRole('batsman')">Batsman</div>
+                  <div [ngClass]="{'active': activeRole === 'ar'}" (click)="showRole('ar')">All Rounder</div>
+                  <div [ngClass]="{'active': activeRole === 'bowler'}" (click)="showRole('bowler')">Bowler</div>
               </div>
               </div>
               <div class="table-responsive">
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col" class="text-center">Role</th>
-                      <th scope="col">Player name</th>
-                      <th scope="col" class="text-center">Credits</th>
-                      <th scope="col" class="text-center">Total Point</th>
-                      <th scope="col" class="text-center"></th>
-                    </tr>
-                  </thead>
-                  <tbody class="f-family-montserrat">
-                    <tr [ngClass]="{'active': isActiveId === list.id, 'd-none': list.role !== activeRole}" *ngFor="let list of lists; i as index" (click)=selectRow(list.id)>
-                      <ng-container>
-                        <th scope="row" class="text-center"><img src="{{list.icon}}" height="20"></th>
-                        <td class="player-name"><img class="mr-2 rounded-circle" src="{{list.photo}}" width="30" height="30" /> {{list.name}}</td>
-                        <td class="text-center">{{list.bat}}</td>
-                        <td class="text-center">
-                          {{list.points}}
-                        </td>
-                        <td class="text-center">
-                            <div id="addPlayer" class="icon-plus icons" (click)="addPlayer(id)">+</div>
-                        </td>
-                      </ng-container>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-center">Role <i class="fas"></i></th>
+                        <th scope="col" (click)="sort('name')" >Player name <i class="fas" [ngClass]="{'fa-sort-alpha-down': (!isDesc), 'fa-sort-alpha-up': (isDesc) }"></i></th>
+                        <th scope="col"  (click)="sort('credit')" class="text-center">Credits <i class="fas" [ngClass]="{'fa-sort-numeric-down': (!isDesc), 'fa-sort-numeric-up': (isDesc) }"></i></th>
+                        <th scope="col"  (click)="sort('points')" class="text-center">Total Point <i class="fas" [ngClass]="{'fa-sort-numeric-down': (!isDesc), 'fa-sort-numeric-up': (isDesc) }"></i></th>
+                        <th scope="col"  class="text-center"></th>
+                      </tr>
+                    </thead>
+                    <tbody class="f-family-montserrat">
+                      <tr>
+                        <td colspan="5">
+                          <perfect-scrollbar style="max-width: 600px; max-height: 400px;" [config]="config">
+                            <table class="table table-hover">
+                              <thead>
+                                <tr>
+                                  <th style="opacity: 0;margin:0;padding: 0;line-height: 0" scope="col" class="text-center">Role</th>
+                                  <th style="opacity: 0;margin:0;padding: 0;line-height: 0" scope="col">Player name</th>
+                                  <th style="opacity: 0;margin:0;padding: 0;line-height: 0" scope="col" class="text-center">Credits</th>
+                                  <th style="opacity: 0;margin:0;padding: 0;line-height: 0" scope="col" class="text-center">Total Point</th>
+                                  <th style="opacity: 0;margin:0;padding: 0;line-height: 0" scope="col" class="text-center"></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="all" [ngClass]="" *ngFor="let list of myplayers | searchfilter : searchPlayers" (click)=selectRow(list.id)>
+                                  <ng-container>
+                                    <th scope="row" class="text-center">
+                                      <img src="{{list.icon}}" height="20">
+                                      </th>
+                                      <td class="player-name">
+                                        <img class="mr-2 rounded-circle" src="{{list.photo}}" width="30" height="30" /> {{list.name}}
+                                      </td>
+                                      <td class="text-center">{{list.credit}}</td>
+                                      <td class="text-center">
+                                          {{list.points}}
+                                        </td>
+                                      <td class="text-center">
+                                        <div id="addPlayer" class="icon-plus icons" (click)="addPlayer(id)">+</div>
+                                      </td>
+                                    </ng-container>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </perfect-scrollbar>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
             </div>
           </div>
         </div>

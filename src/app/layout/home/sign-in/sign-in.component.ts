@@ -49,7 +49,7 @@ export class SignInComponent implements OnInit {
     if (this.signinform.valid) {      
       console.log('form submitted');
       this.signinform.reset();
-      //this.router.navigate(['/squad-selection']);
+      this.router.navigate(['/squad-selection']);
     }else {
       this.validateAllFormFields(this.signinform);
     }
