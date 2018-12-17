@@ -1,0 +1,95 @@
+{
+"playerslist":[
+  {
+    "id": 1,
+    "role": "batsman",
+    "icon": "assets/images/bat.png",
+    "name": "A Finch",
+    "photo": "assets/images/user.png",
+    "credit": 3,
+    "points": 110,
+    "team": "aus"
+  },
+  {
+    "id": 2,
+    "role": "bowler",
+    "icon": "assets/images/ball.png",
+    "name": "M Starc",
+    "photo": "assets/images/user.png",
+    "credit": 6,
+    "points": 110,
+    "team": "aus"
+  },
+  {
+    "id": 3,
+    "role": "bowler",
+    "icon": "assets/images/ball.png",
+    "name": "Pat Cummins",
+    "photo": "assets/images/user.png",
+    "credit": 9,
+    "points": 90,
+    "team": "aus"
+  },
+  {
+    "id": 4,
+    "role": "wk",
+    "icon": "assets/images/wk.png",
+    "name": "Dhoni",
+    "photo": "assets/images/user.png",
+    "credit": 4,
+    "points": 100,
+    "team": "ind"
+  },
+  {
+    "id": 5,
+    "role": "wk",
+    "icon": "assets/images/wk.png",
+    "name": "T Paine",
+    "photo": "assets/images/user.png",
+    "credit": 7,
+    "points": 95,
+    "team": "aus"
+  },
+  {
+    "id": 6,
+    "role": "ar",
+    "icon": "assets/images/ar.png",
+    "name": "Hardik Pandya",
+    "photo": "assets/images/user.png",
+    "credit": 3,
+    "points": 90,
+    "team": "ind"
+  },
+  {
+    "id": 7,
+    "role": "ar",
+    "icon": "assets/images/ar.png",
+    "name": "G Maxwell",
+    "photo": "assets/images/user.png",
+    "credit": 3,
+    "points": 90,
+    "team": "aus"
+  },
+  {
+    "id": 8,
+    "role": "bowler",
+    "icon": "assets/images/ball.png",
+    "name": "J Bumrah",
+    "photo": "assets/images/user.png",
+    "credit": 11,
+    "points": 110,
+    "team": "ind"
+  },
+  {
+    "id": 9,
+    "role": "batsman",
+    "icon": "assets/images/bat.png",
+    "name": "Virat Kohli",
+    "photo": "assets/images/user.png",
+    "credit": 4,
+    "points": 110,
+    "team": "ind"
+  }
+
+]
+}
